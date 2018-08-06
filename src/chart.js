@@ -1,4 +1,4 @@
-import { Chart } from 'chart.js';
+import Chart from 'chart.js';
 
 function getColor(isActive, alpha = 1) {
   return isActive
