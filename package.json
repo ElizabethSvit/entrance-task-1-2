@@ -1,7 +1,7 @@
 {
   "name": "shri-2018-2-task-1",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "start": "webpack-dev-server"
   },
@@ -12,6 +12,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "chart.js": "^2.7.2"
+    "chart.js": "^2.7.2",
+    "ymaps": "^0.1.1"
   }
 }

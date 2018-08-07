@@ -9,7 +9,7 @@ export function initMap(ymaps, containerId) {
     zoom: 10
   });
 
-  const objectManager = new ymaps.ObjectManager({
+  var objectManager = new ymaps.ObjectManager({
     clusterize: true,
     gridSize: 64,
     clusterIconLayout: 'default#pieChart',
@@ -44,7 +44,7 @@ export function initMap(ymaps, containerId) {
   const listBoxControl = createFilterControl(ymaps);
   myMap.controls.add(listBoxControl);
 
-  var filterMonitor = new ymaps.Monitor(listBoxControl.state);
+  const filterMonitor = new ymaps.Monitor(listBoxControl.state);
   filterMonitor.add('filters', filters => {
     objectManager.setFilter(
       obj => filters[obj.isActive ? 'active' : 'defective']
