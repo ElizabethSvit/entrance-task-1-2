@@ -32,7 +32,7 @@ export function initMap(ymaps, containerId) {
     const objectId = event.get('objectId');
     const obj = objectManager.objects.getById(objectId);
 
-    objectManager.objects.open(objectId);
+    objectManager.objects.balloon.open(objectId);
 
     if (!obj.properties.details) {
       loadDetails(objectId).then(data => {
