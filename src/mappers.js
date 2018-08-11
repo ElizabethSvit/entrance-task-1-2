@@ -1,4 +1,5 @@
 export function mapServerData(serverData) {
+  console.log(serverData);
   return {
     type: "FeatureCollection",
     features: serverData.map((obj, index) => ({

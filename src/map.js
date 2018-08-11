@@ -4,9 +4,9 @@ import { createFilterControl } from './filter';
 
 export function initMap(ymaps, containerId) {
   const myMap = new ymaps.Map(containerId, {
-    center: [55.76, 37.64],
+    center: [37.64, 55.76],
     controls: [],
-    zoom: 10
+    zoom: 5
   });
 
   var objectManager = new ymaps.ObjectManager({
@@ -23,14 +23,16 @@ export function initMap(ymaps, containerId) {
 
   loadList().then(data => {
     objectManager.add(data);
+    console.log(data);
   });
+
 
   // details
   objectManager.objects.events.add('click', event => {
     const objectId = event.get('objectId');
     const obj = objectManager.objects.getById(objectId);
 
-    objectManager.objects.balloon.open(objectId);
+    objectManager.objects.open(objectId);
 
     if (!obj.properties.details) {
       loadDetails(objectId).then(data => {
@@ -50,4 +52,9 @@ export function initMap(ymaps, containerId) {
       obj => filters[obj.isActive ? 'active' : 'defective']
     );
   });
+
+    myMap.controls.add(objectManager);
+
 }
+
+
