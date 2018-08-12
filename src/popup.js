@@ -39,7 +39,7 @@ export function getPopupContent(obj) {
             </table>
         `;
 
-        htmlInfo += htmlTable;
+        content += htmlTable;
     }
 
     return content;

@@ -14,16 +14,15 @@ export function initMap(ymaps, containerId) {
     gridSize: 64,
     clusterIconLayout: 'default#pieChart',
     clusterDisableClickZoom: false,
-    geoObjectOpenBalloonOnClick: false,
+    geoObjectOpenBalloonOnClick: true,
     geoObjectHideIconOnBalloonOpen: false,
     geoObjectBalloonContentLayout: getDetailsContentLayout(ymaps)
   });
 
-  objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+  // objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
 
   loadList().then(data => {
     objectManager.add(data);
-    console.log(data);
   });
 
 
